@@ -14,7 +14,8 @@ from hnas.utils.callbacks import LRSchedulerM, MyModelCheckpoint
 from hnas.utils.hapi_wrapper import Trainer
 from hnas.utils.transforms import ToArray
 from hnas.utils.yacs import CfgNode
-from paddleslim.nas.ofa import DistillConfig, ResOFA
+from paddleslim.nas.ofa import DistillConfig
+from paddleslim.nas.ofa.resofa import ResOFA
 from paddleslim.nas.ofa.convert_super import Convert, supernet
 from paddleslim.nas.ofa.utils import utils
 
