@@ -17,7 +17,7 @@ from ...common import get_logger
 import functools
 import paddle.nn as nn
 from paddle.nn.initializer import Constant
-from paddle.fluid.layers.utils import flatten
+# from paddle.fluid.layers.utils import flatten
 
 _logger = get_logger(__name__, level=logging.INFO)
 
