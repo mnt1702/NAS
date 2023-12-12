@@ -605,7 +605,7 @@ class Trainer(Model):
             MyRandomResizedCrop.epoch = kwargs.get('epoch', None)
 
         for step, data in enumerate(data_loader):
-            data = flatten(data)
+            data = flatten(paddle.to_tensor(data))
 
             batch_size = data[0].shape()[0] if callable(data[0].shape) else data[0].shape[0]
 
