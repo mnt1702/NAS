@@ -606,7 +606,7 @@ class Trainer(Model):
 
         for step, data in enumerate(data_loader):
             print("data: ", data)
-            data = flatten(paddle.to_tensor(data))
+            data = flatten(data)
 
             batch_size = data[0].shape()[0] if callable(data[0].shape) else data[0].shape[0]
 
