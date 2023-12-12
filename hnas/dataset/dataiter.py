@@ -17,7 +17,7 @@ import queue
 import paddle.fluid.core as core
 import paddle.fluid as fluid
 
-from paddle.io.dataloader import dataloader_iter as dli
+from paddle.fluid.dataloader import dataloader_iter as dli
 from paddle.io import DataLoader
 from .worker import _worker_loop
 

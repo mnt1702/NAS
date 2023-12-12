@@ -6,9 +6,9 @@ import numpy as np
 import traceback
 
 from paddle.fluid import core
-from paddle.io.dataloader.fetcher import _IterableDatasetFetcher, _MapDatasetFetcher
+from paddle.fluid.dataloader.fetcher import _IterableDatasetFetcher, _MapDatasetFetcher
 from paddle.fluid.multiprocess_utils import _cleanup_mmap, CleanupFuncRegistrar, MP_STATUS_CHECK_INTERVAL
-from paddle.io.dataloader.flat import _flatten_batch
+from paddle.fluid.dataloader.flat import _flatten_batch
 
 import queue
 from .random_size_crop import MyRandomResizedCrop

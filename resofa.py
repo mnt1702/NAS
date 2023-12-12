@@ -9,15 +9,15 @@ from collections import OrderedDict
 from paddle import DataParallel
 import paddle
 
-from .ofa import OFA
-from .layers_base import BaseBlock
-from ...core import GraphWrapper, dygraph2program
-from .get_sub_model import get_prune_params_config, prune_params, check_search_space
-from ...common import get_logger
+from paddleslim.nas.ofa.ofa import OFA
+from paddleslim.nas.ofa.layers_base import BaseBlock
+from paddleslim.core import GraphWrapper, dygraph2program
+from paddleslim.nas.ofa.get_sub_model import check_search_space
+from paddleslim.common import get_logger
 import functools
 import paddle.nn as nn
 from paddle.nn.initializer import Constant
-# from paddle.fluid.layers.utils import flatten
+from paddle.fluid.layers.utils import flatten
 
 _logger = get_logger(__name__, level=logging.INFO)
 
