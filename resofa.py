@@ -165,7 +165,7 @@ class ResOFA(OFA):
 
         # find shortcut and set same config for the situation
         self._same_ss = check_search_space(GraphWrapper(_st_prog))
-
+        print("test: ", self._same_ss)
         self._same_ss = sorted(self._same_ss)
         self._param2key = {}
         self._broadcast = True
