@@ -181,7 +181,7 @@ class ResOFA(OFA):
                         self._param2key[param.name] = name
                     if 'conv' in name:
                         self.universe.append(name)
-
+        print(self._param2key)
         def func(x, y):
             x = x.split('.')
             xk1, xk2 = int(x[1]), x[2]
