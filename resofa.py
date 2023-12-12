@@ -205,7 +205,7 @@ class ResOFA(OFA):
         for ss in self._same_ss:
             per_ss = []
             for key in ss:
-                if key not in self._param2key.keys():
+                if key not in list(self._param2key.keys()):
                     continue
 
                 if self._param2key[key] in self._ofa_layers.keys() and (
