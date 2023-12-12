@@ -165,7 +165,7 @@ class ResOFA(OFA):
 
         # find shortcut and set same config for the situation
         self._same_ss = check_search_space(GraphWrapper(_st_prog))
-        print("test: ", self._same_ss)
+        # print("test: ", self._same_ss)
         # self._same_ss = sorted(self._same_ss)
         self._param2key = {}
         self._broadcast = True
@@ -181,7 +181,7 @@ class ResOFA(OFA):
                         self._param2key[param.name] = name
                     if 'conv' in name:
                         self.universe.append(name)
-        print("key: ", self._param2key.keys())
+        # print("key: ", self._param2key.keys())
         def func(x, y):
             x = x.split('.')
             xk1, xk2 = int(x[1]), x[2]
