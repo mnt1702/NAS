@@ -12,7 +12,7 @@ import paddle
 from paddleslim.nas.ofa.ofa import OFA
 from paddleslim.nas.ofa.layers_base import BaseBlock
 from paddleslim.core import GraphWrapper, dygraph2program
-from paddleslim.nas.ofa.get_sub_model import check_search_space
+from paddleslim.nas.ofa.get_sub_model import check_search_space, broadcast_search_space
 from paddleslim.common import get_logger
 import functools
 import paddle.nn as nn
@@ -86,8 +86,8 @@ class ResOFA(OFA):
             else:
                 # for linear
                 self.current_config[k] = v 
-                
-        # self._broadcast_ss()
+        self._broadcast = True
+        broadcast_search_space(self._same_ss, self._param2key, self.current_config)
         return self.current_config
 
     def active_subnet(self, img_size=None):
@@ -104,7 +104,8 @@ class ResOFA(OFA):
             else:
                 self.current_config[key] = v
 
-        # self._broadcast_ss()
+        self._broadcast = True
+        broadcast_search_space(self._same_ss, self._param2key, self.current_config)
 
     def active_specific_subnet(self, img_size=None, arch_config: str = None):
         if img_size is None:
