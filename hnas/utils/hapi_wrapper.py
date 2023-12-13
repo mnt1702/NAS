@@ -606,10 +606,7 @@ class Trainer(Model):
 
         print("all data: ")
         x = 0
-        for step, data in enumerate(data_loader):
-            print(x, ": ", data)
-            x += 1
-        return
+        
         for step, data in enumerate(data_loader):
             data = flatten(data[0])
 
