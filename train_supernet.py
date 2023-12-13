@@ -58,8 +58,8 @@ def _loss_forward(self, input, label=None, tea_input=None):
         print("input: ", input)
         print("label: ", label)
         ce = paddle.nn.functional.cross_entropy(
-            label,
             input,
+            label,
             weight=self.weight,
             ignore_index=self.ignore_index,
             reduction=self.reduction,
@@ -149,8 +149,8 @@ def main(cfg):
         224), ToArray(), Normalize(IMAGE_MEAN, IMAGE_STD)])
     train_set = DatasetFolder(os.path.join(
         cfg.image_dir, 'train'), transform=transforms)
-    for i in range(train_set.__len__()):
-        print(i, " train set: ", train_set.__getitem__(i))
+    # for i in range(train_set.__len__()):
+    #     print(i, " train set: ", train_set.__getitem__(i))
     # val_set = DatasetFolder(os.path.join(cfg.image_dir, 'val'), transform=val_transforms)
     callbacks = [LRSchedulerM(),
                  MyModelCheckpoint(cfg.save_freq, cfg.save_dir,
