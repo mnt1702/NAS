@@ -604,7 +604,10 @@ class Trainer(Model):
         if mode == 'train':
             MyRandomResizedCrop.epoch = kwargs.get('epoch', None)
 
-        print("all data: ", data_loader)
+        print("all data: ")
+        for step, data in enumerate(data_loader):
+            print(data)
+        return
         for step, data in enumerate(data_loader):
             data = flatten(data)
 
