@@ -57,10 +57,9 @@ def _loss_forward(self, input, label=None, tea_input=None):
         # normal cross entropy
         print("input: ", input)
         print("label: ", label)
-        label = paddle.reshape(label, (1, -1))
         ce = paddle.nn.functional.cross_entropy(
-            input,
             label,
+            input,
             weight=self.weight,
             ignore_index=self.ignore_index,
             reduction=self.reduction,
