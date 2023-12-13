@@ -225,6 +225,7 @@ class ResNet(nn.Layer):
             b.reorder_weights()
 
     def forward(self, x):
+        print("test: ", x)
         x = self.blocks[0](x)
 
         for stage_id, block_idx in enumerate(self.grouped_block_index):
