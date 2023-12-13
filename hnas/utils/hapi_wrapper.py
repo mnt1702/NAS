@@ -605,11 +605,13 @@ class Trainer(Model):
             MyRandomResizedCrop.epoch = kwargs.get('epoch', None)
 
         print("all data: ")
+        x = 0
         for step, data in enumerate(data_loader):
-            print(data)
+            print(x, ": ", data)
+            x += 1
         return
         for step, data in enumerate(data_loader):
-            data = flatten(data)
+            data = flatten(data[0])
 
             batch_size = data[0].shape()[0] if callable(data[0].shape) else data[0].shape[0]
 
