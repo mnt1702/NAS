@@ -20,7 +20,7 @@ from paddleslim.nas.ofa.convert_super import Convert, supernet
 from paddleslim.nas.ofa.utils import utils
 
 
-def _loss_forward(self, input, tea_input=None, label=None):
+def _loss_forward(self, label=None, tea_input=None, input):
     if tea_input is not None and label is not None:
         # cross entropy + knowledge distillation
         ce = paddle.nn.functional.cross_entropy(
