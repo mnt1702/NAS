@@ -225,6 +225,9 @@ class ResNet(nn.Layer):
             b.reorder_weights()
 
     def forward(self, x):
+        if x.ndim != 4 and x.ndim != 5:
+            return x
+
         print("test: ", x)
         x = self.blocks[0](x)
 
