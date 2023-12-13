@@ -55,6 +55,7 @@ def _loss_forward(self, input, tea_input=None, label=None):
         return kd
     elif label is not None:
         # normal cross entropy
+        print("label: ", label)
         ce = paddle.nn.functional.cross_entropy(
             input,
             label,
