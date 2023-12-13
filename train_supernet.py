@@ -149,6 +149,7 @@ def main(cfg):
         224), ToArray(), Normalize(IMAGE_MEAN, IMAGE_STD)])
     train_set = DatasetFolder(os.path.join(
         cfg.image_dir, 'train'), transform=transforms)
+    print("train set: ", train_set)
     # val_set = DatasetFolder(os.path.join(cfg.image_dir, 'val'), transform=val_transforms)
     callbacks = [LRSchedulerM(),
                  MyModelCheckpoint(cfg.save_freq, cfg.save_dir,
