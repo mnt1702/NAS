@@ -604,8 +604,8 @@ class Trainer(Model):
         if mode == 'train':
             MyRandomResizedCrop.epoch = kwargs.get('epoch', None)
 
+        print("all data: ", data_loader)
         for step, data in enumerate(data_loader):
-            print("data: ", data)
             data = flatten(data)
 
             batch_size = data[0].shape()[0] if callable(data[0].shape) else data[0].shape[0]
