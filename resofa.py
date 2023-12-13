@@ -87,7 +87,7 @@ class ResOFA(OFA):
                 # for linear
                 self.current_config[k] = v 
                 
-        self._broadcast_ss()
+        # self._broadcast_ss()
         return self.current_config
 
     def active_subnet(self, img_size=None):
@@ -104,7 +104,7 @@ class ResOFA(OFA):
             else:
                 self.current_config[key] = v
 
-        self._broadcast_ss()
+        # self._broadcast_ss()
 
     def active_specific_subnet(self, img_size=None, arch_config: str = None):
         if img_size is None:
